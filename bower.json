@@ -1,0 +1,8 @@
+{
+  "name": "concurrent",
+  "version": "0.0.1",
+  "dependencies": {
+    "highcharts-release": "~4",
+    "jquery": "~1"
+  }
+}

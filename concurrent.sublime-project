@@ -1,0 +1,22 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+            [
+                "*.sublime-workspace"
+            ],
+            "folder_exclude_patterns":
+            [
+                ".grunt",
+                "dist",
+                "node_modules",
+                "src/dijit",
+                "src/dojo",
+                "src/dojox",
+                "src/util"
+            ],
+			"path": "/"
+		}
+	]
+}

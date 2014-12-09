@@ -1,0 +1,14 @@
+*.idea/
+*.noseids
+*.odc
+*.pyc
+*.sde
+*.sublime-workspace
+*.svn*
+.DS_Store
+.grunt/
+.project
+.pydevproject
+u_*.csv
+node_modules
+src/highcharts-release

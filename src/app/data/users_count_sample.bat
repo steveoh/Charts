@@ -1,0 +1,1 @@
+logparser "SELECT date, minute, count(c-ip) as UserCount INTO tmp/user_counts_sample.csv FROM tmp/u_ex141104.csv GROUP BY date, minute" -i:CSV
