@@ -1,9 +1,4 @@
-/**
- * Dark theme for Highcharts JS
- * @author Torstein Honsi
- */
-
-// Load the fonts
+/* global Highcharts */
 Highcharts.createElement('link', {
     href: 'http://fonts.googleapis.com/css?family=Unica+One',
     rel: 'stylesheet',
@@ -11,7 +6,7 @@ Highcharts.createElement('link', {
 }, null, document.getElementsByTagName('head')[0]);
 
 Highcharts.theme = {
-    colors: ["#F012BE"],
+    colors: ['#F012BE'],
     chart: {
         backgroundColor: {
             linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
@@ -21,7 +16,7 @@ Highcharts.theme = {
             ]
         },
         style: {
-            fontFamily: "'Unica One', sans-serif"
+            fontFamily: '\'Unica One\', sans-serif'
         },
         plotBorderColor: '#606063'
     },

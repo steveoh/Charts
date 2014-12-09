@@ -1,58 +1,34 @@
 /* jshint camelcase:false */
 module.exports = function(grunt) {
-    var jsFiles = 'src/app/**/*.js',
-        otherFiles = [
-            'src/app/**/*.html',
-            'src/app/**/*.css',
-            'src/index.html',
-            'src/ChangeLog.html'
-        ],
-        gruntFile = 'GruntFile.js',
-        internFile = 'tests/intern.js',
-        jshintFiles = [
-            jsFiles,
-            gruntFile,
-            internFile
-        ],
-        bumpFiles = [
-            'package.json',
-            'bower.json',
-            'src/app/package.json',
-            'src/app/config.js'
-        ],
-        deployFiles = [
-            '**',
-            '!**/*.min.*',
-            '!**/*.uncompressed.js',
-            '!**/*consoleStripped.js',
-            '!**/bootstrap/less/**',
-            '!**/bootstrap/test-infra/**',
-            '!**/tests/**',
-            '!build-report.txt',
-            '!components-jasmine/**',
-            '!favico.js/**',
-            '!jasmine-favicon-reporter/**',
-            '!jasmine-jsreporter/**',
-            '!stubmodule/**',
-            '!util/**'
-        ]
-
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         connect: {
             uses_defaults: {}
         },
+        copy: {
+            main: {
+                expand: true,
+                cwd: 'src/',
+                src: '**',
+                dest: 'dist/'
+            }
+        },
+        clean: {
+            main: ['dist']
+        },
         'gh-pages': {
             options: {
                 base: 'dist'
             },
-            src: ['**']
+            all: {
+                src: ['**']
+            }
         },
         jshint: {
             main: {
                 // must use src for newer to work
-                src: jshintFiles
+                src: ['src/app/**.js']
             },
             options: {
                 jshintrc: '.jshintrc'
@@ -60,11 +36,11 @@ module.exports = function(grunt) {
         },
         watch: {
             jshint: {
-                files: jshintFiles,
-                tasks: ['newer:jshint:main', 'jasmine:main:build']
+                files: ['src/app/**.js'],
+                tasks: ['jshint:main']
             },
             src: {
-                files: jshintFiles.concat(otherFiles),
+                files: ['**'],
                 options: {
                     livereload: true
                 }
@@ -81,7 +57,14 @@ module.exports = function(grunt) {
 
     // Default task.
     grunt.registerTask('default', [
+        'jshint',
         'connect',
         'watch'
+    ]);
+
+    grunt.registerTask('publish', [
+        'clean:main',
+        'copy:main',
+        'gh-pages'
     ]);
 };

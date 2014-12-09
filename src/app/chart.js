@@ -1,10 +1,6 @@
-console.log('starting up');
-
-// Get the CSV and create the chart
-$.ajax('data/logs/user_counts.csv').done(function(csv) {
-    console.log('downloaded data');
+$.ajax('app/data/logs/user_counts.csv').done(function(csv) {
     $('#container').highcharts({
-        chart:{
+        chart: {
             type: 'line'
         },
         data: {
@@ -14,7 +10,13 @@ $.ajax('data/logs/user_counts.csv').done(function(csv) {
             text: 'Concurrent Users'
         },
         subtitle: {
-            text: 'For 30 days',
+            text: 'For 30 days'
+        },
+        credits: {
+            enabled: false
+        },
+        tooltip: {
+            enabled: false
         },
         xAxis: {
             tickInterval: 2 * 24 * 3600 * 1000,
@@ -61,7 +63,11 @@ $.ajax('data/logs/user_counts.csv').done(function(csv) {
         },
         plotOptions: {
             series: {
-                allowPointSelect: false
+                states: {
+                    hover: {
+                        enabled: false
+                    }
+                }
             }
         },
         series: [{

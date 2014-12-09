@@ -12,3 +12,4 @@
 u_*.csv
 node_modules
 src/highcharts-release
+dist/
