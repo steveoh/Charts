@@ -7,7 +7,7 @@ $.ajax('app/data/logs/user_counts.csv').done(function(csv) {
             csv: csv
         },
         title: {
-            text: 'Concurrent Users'
+            text: 'Concurrent Users Per Minute'
         },
         subtitle: {
             text: 'For 30 days'
