@@ -21,9 +21,7 @@ module.exports = function(grunt) {
             options: {
                 base: 'dist'
             },
-            all: {
-                src: ['**']
-            }
+            src: ['**']
         },
         jshint: {
             main: {
