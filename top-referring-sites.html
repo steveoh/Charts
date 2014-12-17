@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Charts</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="highcharts-release/highcharts.src.js"></script>
+</head>
+
+<body>
+    <div id="container" style="min-width: 310px; height: 900px; margin: 0 auto"></div>
+</body>
+<script>
+$('#container').highcharts({
+    title: {
+        text: 'Top Referring Sites'
+    },
+    subtitle: {
+        text: '11/5/2014'
+    },
+    credits: {
+        enabled: false
+    },
+    tooltip: {
+        enabled: true
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                distance: 25,
+                style: {
+                    fontWeight: 'bold'
+                }
+            },
+            startAngle: -135,
+            endAngle: 135,
+            center: ['50%', '50%']
+        }
+    },
+    series: [{
+        type: 'pie',
+        name: 'Basemap Usage',
+        innerSize: '50%',
+        data: [
+            ['elections.utah.gov', 331879],
+            ['mapserv.utah.gov', 204345],
+            ['le.utah.gov', 151229],
+            ['assessor.slco.org', 93049],
+            ['utahdnr.maps.arcgis.com', 41487],
+            ['uplan.maps.arcgis.com', 37188],
+            ['www.esri.com', 33144],
+            ['gis.boxeldercounty.org', 31101],
+            ['search.naiutahsouth.com', 20503],
+            ['www.udot.utah.gov', 12513]
+        ]
+    }]
+});
+</script>
+
+</html>
