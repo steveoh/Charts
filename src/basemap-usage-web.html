@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Charts</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="highcharts-release/highcharts.src.js"></script>
+</head>
+
+<body>
+    <div id="container" style="min-width: 310px; height: 900px; margin: 0 auto"></div>
+</body>
+<script>
+$('#container').highcharts({
+    title: {
+        text: 'Basemap Requests'
+    },
+    subtitle: {
+        text: 'From the web on 11/5/2014'
+    },
+    credits: {
+        enabled: false
+    },
+    tooltip: {
+        enabled: true
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                distance: 25,
+                style: {
+                    fontWeight: 'bold'
+                }
+            },
+            startAngle: -135,
+            endAngle: 135,
+            center: ['50%', '50%']
+        }
+    },
+    series: [{
+        type: 'pie',
+        name: 'Basemap Usage',
+        innerSize: '50%',
+        data: [
+            ['Terrain', 295840],
+            ['Hybrid', 243813],
+            ['Vector', 76129],
+            ['Imagery', 35656],
+            ['Lite', 28958],
+            ['Topo', 18953],
+            ['Hillshade', 6336],
+            ['AddressPoints', 651]
+        ]
+    }]
+});
+</script>
+
+</html>

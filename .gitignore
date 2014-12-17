@@ -13,3 +13,4 @@ u_*.csv
 node_modules
 src/highcharts-release
 dist/
+src/app/data/logs/raw/IIS Logs.zip
