@@ -8,15 +8,22 @@
 </head>
 
 <body>
-    <div id="container" style="min-width: 310px; height: 900px; margin: 0 auto"></div>
+    <div id="container" style="margin: 0 auto"></div>
 </body>
 <script>
+var center = -20;
 $('#container').highcharts({
     title: {
-        text: 'Basemap Requests'
+        text: 'Basemap Requests',
+        align: 'center',
+        verticalAlign: 'middle',
+        y: center
     },
     subtitle: {
-        text: 'From the web on 11/5/2014'
+        text: 'From Web Applications on 11/5/2014<br/>Total: 706,336',
+        align: 'center',
+        verticalAlign: 'middle',
+        y: center + 20
     },
     credits: {
         enabled: false
@@ -41,7 +48,7 @@ $('#container').highcharts({
     series: [{
         type: 'pie',
         name: 'Basemap Usage',
-        innerSize: '50%',
+        innerSize: '70%',
         data: [
             ['Terrain', 295840],
             ['Hybrid', 243813],
